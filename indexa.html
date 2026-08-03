@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times; color: #c9dbfc; color: rgba(201, 219, 252, 0.7); -webkit-text-stroke: rgba(201, 219, 252, 0.7)}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times; color: #40a33f; -webkit-text-stroke: #40a33f}
+    span.s1 {font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s2 {font-kerning: none; color: #3d75f3; background-color: #0f0f0f; -webkit-text-stroke: 0px #3d75f3}
+    span.s3 {font-kerning: none; background-color: #0f0f0f}
+    span.s4 {font-kerning: none; color: rgba(201, 219, 252, 0.7); background-color: #0f0f0f; -webkit-text-stroke: 0px rgba(201, 219, 252, 0.7)}
+    span.s5 {font-kerning: none; color: #40a33f; background-color: #0f0f0f; -webkit-text-stroke: 0px #40a33f}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Firebase Remote Config Testing Harness&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 30px; max-width: 900px; margin: 0 auto; background: #f8f9fa; color: #202124; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 { font-size: 26px; color: #1a73e8; margin-bottom: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.subtitle { color: #5f6368; margin-bottom: 24px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 30px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card { background: white; padding: 18px; border-radius: 8px; border: 1px solid #dadce0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card h3 { margin: 0 0 8px 0; font-size: 14px; color: #5f6368; font-family: monospace; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.value { font-size: 18px; font-weight: 600; color: #1e8e3e; word-break: break-word; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.json-val { font-size: 12px; font-family: monospace; white-space: pre-wrap; background: #f1f3f4; padding: 8px; border-radius: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.actions { background: white; padding: 20px; border-radius: 8px; border: 1px solid #dadce0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button { background: #1a73e8; color: white; border: none; padding: 10px 16px; border-radius: 4px; font-weight: 500; cursor: pointer; margin-right: 8px; margin-top: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button.secondary { background: #5f6368; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover { opacity: 0.9; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Remote Config Test Harness&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="subtitle"&gt;Live testing environment for flags, A/B tests, and analytics metrics.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;enable_new_dashboard&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-1" class="value"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;ui_test_flag&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-2" class="value"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;checkout_flow_mvt&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-3" class="value"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;banner_background_color&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-4" class="value"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;welcome_promo_copy&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-5" class="value"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;max_items_per_page&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-6" class="value"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;discount_percentage&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-7" class="value"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;enable_beta_analytics&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-8" class="value"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;ad_revenue_metric_type&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-9" class="value"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card" style="grid-column: span 2;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;feature_promo_json&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="flag-10" class="json-val"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Analytics &amp; Metric Triggers&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Trigger events to test A/B testing metric collection:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="btn-custom"&gt;Log Custom "ad_revenue" Event&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="btn-system" class="secondary"&gt;Log System "ad_impression" Event&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="btn-refetch" class="secondary"&gt;Force Config Fetch&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script type="module"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-remote-config.js";</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">       </span></span><span class="s2">const</span><span class="s3"> firebaseConfig = {</span></p>
+<p class="p4"><span class="s4">  apiKey: </span><span class="s3">"AIzaSyAhumMra7kQH6QMkzIL-v7LXV8CCRlsWu0"</span><span class="s4">,</span></p>
+<p class="p4"><span class="s4">  authDomain: </span><span class="s3">"darujhistan-ab3df.firebaseapp.com"</span><span class="s4">,</span></p>
+<p class="p4"><span class="s4">  projectId: </span><span class="s3">"darujhistan-ab3df"</span><span class="s4">,</span></p>
+<p class="p4"><span class="s4">  storageBucket: </span><span class="s3">"darujhistan-ab3df.firebasestorage.app"</span><span class="s4">,</span></p>
+<p class="p3"><span class="s3">  messagingSenderId: </span><span class="s5">"851019126871"</span><span class="s3">,</span></p>
+<p class="p4"><span class="s4">  appId: </span><span class="s3">"1:851019126871:web:329c2400edf907e6bc6b12"</span><span class="s4">,</span></p>
+<p class="p3"><span class="s3">  measurementId: </span><span class="s5">"G-2HWDL7VTY9"</span></p>
+<p class="p3"><span class="s3">};</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const app = initializeApp(firebaseConfig);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const analytics = getAnalytics(app);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const remoteConfig = getRemoteConfig(app);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Allow instant fetch during testing</p>
+<p class="p1"><span class="Apple-converted-space">        </span>remoteConfig.settings.minimumFetchIntervalMillis = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function loadFlags() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>fetchAndActivate(remoteConfig).then(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-1').innerText = getValue(remoteConfig, 'enable_new_dashboard').asBoolean();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-2').innerText = getValue(remoteConfig, 'ui_test_flag').asString() || "default";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-3').innerText = getValue(remoteConfig, 'checkout_flow_mvt').asString() || "control";</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const color = getValue(remoteConfig, 'banner_background_color').asString() || "#1a73e8";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-4').innerText = color;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-4').style.color = color;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-5').innerText = getValue(remoteConfig, 'welcome_promo_copy').asString() || "Welcome!";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-6').innerText = getValue(remoteConfig, 'max_items_per_page').asNumber() || 10;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-7').innerText = getValue(remoteConfig, 'discount_percentage').asNumber() + "%";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-8').innerText = getValue(remoteConfig, 'enable_beta_analytics').asBoolean();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('flag-9').innerText = getValue(remoteConfig, 'ad_revenue_metric_type').asString() || "unset";</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const rawJson = getValue(remoteConfig, 'feature_promo_json').asString();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('flag-10').innerText = JSON.stringify(JSON.parse(rawJson || '{"banner": false}'), null, 2);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} catch(e) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('flag-10').innerText = "Invalid JSON or default";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>loadFlags();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('btn-custom').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>logEvent(analytics, 'ad_revenue', { value: 1.25, currency: 'USD' });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('Custom event "ad_revenue" logged!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('btn-system').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>logEvent(analytics, 'ad_impression', { value: 0.05, currency: 'USD' });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('System event "ad_impression" logged!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('btn-refetch').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>loadFlags();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
