@@ -141,10 +141,10 @@
         document.getElementById('btn-refetch').addEventListener('click', () => {
             loadFlags();
         });
-        getToken(installations).then((currentToken) => {
-        console.log("My Test Device Token:", currentToken);
+        getId(installations).then((id) => {
+        console.log("My Test Device ID:", id);
         }).catch((err) => {
-        console.error("An error occurred while retrieving token: ", err);
+        console.error("An error occurred while retrieving ID: ", err);
     });
                 
     </script>
